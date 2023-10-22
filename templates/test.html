@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('bg.jpg'); /* Add the path to your background image */
+            background-size: cover; /* This ensures the background image covers the whole viewport */
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .container {
+    display: none;
+    background-color: #ffffff;
+    padding: 20px;
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 50px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 2px #888888;
+}
+
+h2 {
+    text-align: center;
+}
+
+input[type=text], input[type=email], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+        /* Your existing CSS styles go here */
+        /* ... */
+    </style>
+</head>
+<body>
+<div class="button1">
+    <button onclick="openform()" id="openform">Get Recommendations</button>
+</div>
+<div class="container" id="container">
+    <!-- Your form content goes here -->
+    <h2> Form</h2>
+    <form action="/register" method="post">
+        <label for="firstName"><b>Qualifications</b></label>
+        <input type="text" id="firstName" placeholder="ie: SSLC,11th,12th etc" name="Qualifications" required>
+
+        <label for="lastName"><b>Job Description</b></label>
+        <input type="text" id="lastName" placeholder="Describe the type of job you would like" name="Job Description" required>
+
+        <label for="lastName"><b>Career Aspirations</b></label>
+        <input type="text" id="lastName" placeholder="Enter any relevant information about your job" name="Career Aspirations" required>
+
+        <button type="submit">Submit</button>
+        <label for="confirmPassword"><b>Recommended careers</b></label>
+        <input type="password" id="Resultbox"  name="Recommended careers" required>
+
+    </form>
+</div>
+
+<script>
+
+    function openform() {
+  document.getElementById("container").style.display = "block";
+  document.getElementById("openform").style.display = "none";
+  
+}
+</script>
+
+</body>
+</html>

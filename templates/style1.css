@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(28, 9, 46);
+    font-family: sans-serif;
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(Images/f50e044eb8509f77da04033db25dd98b.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.first1 {
+    height: 120px;
+    margin: auto;
+    display: flex;
+    padding: 0px 10px 2px 10px;
+    align-items: center;
+    justify-content: space-between;
+    overflow: visible;
+    background-color: hwb(270 4% 64% / 0.561);
+    overflow: hidden;
+}
+
+.first1 img {
+    border-radius: 100px;
+    cursor: pointer;
+    mix-blend-mode: luminosity;
+    background-color: hsl(270, 78%, 20%);
+}
+
+.first1 h1 {
+    display: block;
+    text-align: center;
+    float: left;
+    flex-shrink: 0;
+    color: white;
+    font-size: 2.7em;
+    padding: 30px;
+    column-span: 30px;
+}
+
+.first1 ul li a {
+    color: white;
+    text-decoration: none;
+    font-family: Roboto;
+}
+
+.first1 ul {
+    list-style-type: none;
+    display: flex;
+    opacity: 100%;
+    justify-content: space-between;
+    padding: 0px 0px 0px 0px;
+    text-align: center;
+}
+
+.first1 ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 15px;
+    position: relative;
+}
+
+.first1 ul li::after {
+    content: '';
+    height: 3px;
+    width: 0%;
+    background: hsl(303, 68%, 50%);
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+.first1 ul li:hover::after {
+    width: 100%;
+}
+
+.hr0 {
+    background: #f01ce296;
+    width: 100%;
+    height: 3px;
+    margin-top: 500px;
+    bottom: 0;
+}
+
+input[type=text], input[type=email], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 10px auto;
+    margin-bottom: 30px;
+    color: white;
+    background-color: rgba(121, 67, 168, 0.598);
+    display: inline-block;
+    border: 1px solid #b324ec;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #491173a8;
+    padding: 20px;
+    width: 400px;
+    color: white;
+    margin: 0 auto;
+    margin-top: 80px;
+    margin-bottom: 50px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 2px #9913856e;
+}
+
+.container h4{
+    margin-top: 5px;
+    margin-bottom: 25px;
+}
+
+.content {
+    width: 100%;
+    position: relative;
+    margin-top: 130px;
+    margin-bottom: 70px;
+    text-align: center;
+    color: white;
+}
+
+.content h1 {
+    margin-top: 30px;
+    margin: 0 auto;
+    font-size: 60px;
+    font-family: sans-serif;
+}
+
+.content h2 {
+    margin-bottom: 80px;
+    font-size: 2em;
+    position: relative;
+}
+
+.content p {
+    margin: 20px auto;
+    margin-top: 20px;
+    line-height: 25px;
+    font-weight: 100;
+    width: 75%;
+}
+
+button {
+    width: 160px;
+    padding: 15px 0;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid hsl(304, 71%, 49%);
+    background: transparent;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+button div {
+    background: hsl(304, 100%, 50%);
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+button:hover div {
+    width: 100%;
+}
+
+footer {
+    display: ns;
+    background-color: rgb(32, 9, 48);
+}
+
+.bottoms {
+    height: 100px;
+    overflow: hidden;
+    width: 95%;
+    border: 2px solid rgb(42, 10, 42);
+    border-radius: 29px;
+    margin: 4% 2.5%;
+    background-color: rgb(32, 9, 48);
+}
+
+.hr1 {
+    background: #f01ce296;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+}
+
+
+/* Show the navigation when the screen size is smaller */
+@media screen and (max-width: 875px) {
+    .first1 ul {
+        opacity: 0%;
+        display: none;
+    }
+
+    .nav{
+        display: block;
+    }
+
+    .first1 h1 {
+        flex-grow: 1;
+    }
+}
+
+/* Hide the navigation when the screen size is larger */
+@media screen and (min-width: 875px) {
+    .first1 ul {
+        opacity: 100%;
+        display: flex;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .first1 .h1 {
+        flex-grow: 0;
+    }
+}
+
+
+#recommendedCareers{
+    margin: 50px auto;
+    margin-bottom: 120px;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Compass</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+</head>
+<body class="banner1">
+    <div class="first1">
+        <img src="{{ url_for('static', filename='Images/Screenshot 2023-10-01 162703.png') }}" alt="logo">        
+        <h1>Career Compass</h1>
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">Find Career</a></li>
+            <li><a href="">Appitude Test</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+    </div>
+    <div class="hr1"></div>
+    <div class="content">
+        <h1>Career Compass</h1>
+        <br>
+        <h2>Your Path to Success!</h2>
+        <p>We're here to empower students like you in making well-informed career choices that align with your passions and aspirations.</p>
+        <div class="container">
+            <h4>Enter your query:</h4>
+
+            <label class="textes" for="qualificationsInput">Qualifications:</label>
+            <input type="text" id="qualificationsInput" placeholder="Enter Qualifications">
+
+            <label class="textes" for="jobDescriptionInput">Job Descriptions:</label>
+            <input type="text" id="jobDescriptionInput" placeholder="Enter Job Descriptions">
+
+            <label class="textes" for="careerAspirationsInput">Career Aspirations:</label>
+            <input type="text" id="careerAspirationsInput" placeholder="Enter Career Aspirations">
+
+            <button onclick="getRecommendations()" id="popupButton"><div></div>Get Recommendations</button>
+        </div>
+        <!-- Upgrading -->
+        <div class="popup" id="popupForm">
+            <div class="popup-content">
+                <span class="close" id="closeButton">&times;</span>
+                <h2>Popup Form</h2>
+                <!-- Your form content goes here -->
+                <form>
+                    <!-- Form fields go here -->
+                    <h2 style="color: black;">Recommended Careers:</h2>
+                    <ul id="recommendedCareers" style="color: rgb(42, 18, 226);"></ul>
+                    <button type="submit" style="color: black;">ok</button>
+                </form>
+            </div>
+        </div>
+
+        <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+    </div>
+    <div class="hr1"></div>
+    <script>
+        function getRecommendations() {
+            const qualifications = document.getElementById("qualificationsInput").value;
+            const jobDescription = document.getElementById("jobDescriptionInput").value;
+            const careerAspirations = document.getElementById("careerAspirationsInput").value;
+
+            // Make a POST request to your Flask API with individual parameters
+            fetch('/recommend_careers', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "qualifications": qualifications,
+                    "job_description": jobDescription,
+                    "career_aspirations": careerAspirations
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                displayRecommendations(data.recommended_careers);
+            });
+        }
+
+        function displayRecommendations(recommendedCareers) {
+            const recommendedList = document.getElementById("recommendedCareers");
+            recommendedList.innerHTML = ""; // Clear previous recommendations
+
+            recommendedCareers.forEach(career => {
+                const listItem = document.createElement("li");
+                listItem.textContent = career;
+                recommendedList.appendChild(listItem);
+            });
+        }
+    </script>
+</html>
