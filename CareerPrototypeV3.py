@@ -11,7 +11,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 app = Flask(__name__, static_url_path='/Static')
 
 # Load your dataset
-data = pd.read_excel('C:\\Users\\Gagan\\Desktop\\Careercompass\\Copy of agriculture(1).xlsx')
+data = pd.read_excel('add your dataset')
 
 # Combine relevant columns into one text
 data['combined_text'] = data['job_description'] + ' ' + data['work_environment'] + ' ' + data['qualification'] 
