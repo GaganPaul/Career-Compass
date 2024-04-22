@@ -10,7 +10,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 app = Flask(__name__)
 
 # Load your dataset
-data = pd.read_excel('C:\\Users\\Gagan\\Desktop\\chatbot\\Career dataset (1).xlsx')
+data = pd.read_excel('Your file loaction')
 
 # Combine relevant columns into one text
 data['combined_text'] = data['Career_Name'] + ' ' + data['Description'] + ' ' + data['Qualifications']
