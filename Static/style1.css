@@ -235,13 +235,14 @@ footer {
 
 
 #recommendedCareers{
-    margin: 50px auto;
-    margin-bottom: 120px;
+    margin: 10px auto;
+    /* margin-bottom: 1px; */
 }
 
 /* code for popup */
 .popup {
     display: none;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -265,4 +266,9 @@ footer {
     right: 10px;
     font-size: 24px;
     cursor: pointer;
+}
+
+/* code to remove blue dot*/
+ul, li {
+    list-style-type: none;
 }
